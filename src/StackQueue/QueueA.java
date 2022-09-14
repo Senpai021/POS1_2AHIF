@@ -14,10 +14,12 @@ public class QueueA {
 
         queue.enqueue(person1);
         queue.enqueue(person2);
+
         queue.printAllEllements();
 
         System.out.println(queue.dequeue());
         queue.printAllEllements();
+
     }
 
     public Person dequeue() {
@@ -25,10 +27,21 @@ public class QueueA {
             if(person[i] != null){
                 var tempp = person[i];
                 person[i] = null;
+                reArrange();
                 return tempp;
             }
         }
         return null;
+    }
+
+    private void reArrange(){
+        for(int i = 0; i < person.length; i++){
+            if (person[i] != null){
+                var temp = person[i];
+                person[i - 1] = temp;
+                person[i] = null;
+            }
+        }
     }
 
     public void enqueue(Person perso) {

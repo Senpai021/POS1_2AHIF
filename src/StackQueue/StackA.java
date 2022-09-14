@@ -30,7 +30,7 @@ public class StackA {
         stack.printAllEllements();
     }
 
-    public void push(Person perso) { //hinzufügen
+    public void push(Person perso) {
         if (pos > person.length - 1) {
             System.err.println("Array ist voll!");
         } else {
