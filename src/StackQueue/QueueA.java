@@ -21,15 +21,23 @@ public class QueueA {
     }
 
     public Person dequeue() {
-        Person entf = person[pos];
-        person[pos] = null;
-        pos--;
-        return entf;
+        for(int i = 0; i < person.length; i++){
+            if(person[i] != null){
+                var tempp = person[i];
+                person[i] = null;
+                return tempp;
+            }
+        }
+        return null;
     }
 
     public void enqueue(Person perso) {
-        person[pos] = perso;
-        pos++;
+        if(pos < person.length){
+            person[pos] = perso;
+            pos++;
+        } else{
+            System.out.println("Array ist voll!");
+        }
     }
 
     public QueueA() {
