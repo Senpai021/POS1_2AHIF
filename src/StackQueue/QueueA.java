@@ -1,0 +1,60 @@
+package StackQueue;
+
+public class QueueA {
+
+    private Person[] person;
+
+    private int pos;
+
+    public static void main(String[] args) {
+        QueueA queue = new QueueA();
+
+        Person person1 = new Person("Paul", 2000, false);
+        Person person2 = new Person("Rastislav", 2006, true);
+
+        queue.enqueue(person1);
+        queue.enqueue(person2);
+        queue.printAllEllements();
+
+        System.out.println(queue.dequeue());
+        queue.printAllEllements();
+    }
+
+    public Person dequeue() {
+        Person entf = person[pos];
+        person[pos] = null;
+        pos--;
+        return entf;
+    }
+
+    public void enqueue(Person perso) {
+        person[pos] = perso;
+        pos++;
+    }
+
+    public QueueA() {
+        person = new Person[10];
+        pos = 0;
+    }
+
+    @SuppressWarnings("unused")
+    public Person[] getPerson() {
+        return person;
+    }
+
+    @SuppressWarnings("unused")
+    public void setPerson(Person[] person) {
+        this.person = person;
+    }
+
+    public void printAllEllements() {
+        for (Person person : person) {
+            if (person != null) {
+                System.out.println(person);
+            } else {
+                break;
+            }
+
+        }
+    }
+}
