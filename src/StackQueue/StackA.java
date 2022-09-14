@@ -41,7 +41,7 @@ public class StackA {
 
     public Person pop() {
         if (pos == 0) {
-            System.err.println("Array ist leer");
+            System.err.println("Array ist leer!");
         } else {
             Person entf = person[pos - 1];
             person[pos - 1] = null;
