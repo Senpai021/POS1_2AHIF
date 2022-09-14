@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022 Stefan Psutka
+ * All rights reserved
+ */
+
 package StackQueue;
 
 public class StackA {

@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022 Stefan Psutka
+ * All rights reserved
+ */
+
 package inheritance.teacher.data.test;
 
 import inheritance.teacher.data.Person;
@@ -20,14 +25,14 @@ public class Test {
         }
 
         x.printInfo();
-/*
+
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Eingabe Zahl: ");
 		System.out.println("Zahl: " + sc.nextFloat());
 		System.out.println("Eingabe Text");
 		System.out.println("Text: >" + sc.next() + "<");
 
-*/
+
 
     }
 
