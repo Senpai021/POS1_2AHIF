@@ -3,7 +3,7 @@
  * All rights reserved
  */
 
-package StackQueue;
+package StackQueue_01;
 
 public class TestStack {
 

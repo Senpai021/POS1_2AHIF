@@ -3,12 +3,16 @@
  * All rights reserved
  */
 
-package StackQueue;
+package StackQueue_01;
 
 public class StackA {
 
-    private final Person[] person;
     private static int pos;
+    private final Person[] person;
+
+    public StackA() {
+        person = new Person[10];
+    }
 
     public static void main(String[] args) {
         StackA stack = new StackA();
@@ -68,10 +72,6 @@ public class StackA {
     @SuppressWarnings("unused")
     public Person[] getPersonArr() {
         return person;
-    }
-
-    public StackA() {
-        person = new Person[10];
     }
 
     public void printAllEllements() {

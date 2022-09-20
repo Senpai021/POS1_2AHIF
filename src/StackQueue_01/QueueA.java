@@ -3,13 +3,18 @@
  * All rights reserved
  */
 
-package StackQueue;
+package StackQueue_01;
 
 public class QueueA {
 
     private Person[] person;
 
     private int pos;
+
+    public QueueA() {
+        person = new Person[10];
+        pos = 0;
+    }
 
     public static void main(String[] args) {
         QueueA queue = new QueueA();
@@ -56,11 +61,6 @@ public class QueueA {
         } else{
             System.out.println("Array ist voll!");
         }
-    }
-
-    public QueueA() {
-        person = new Person[10];
-        pos = 0;
     }
 
     @SuppressWarnings("unused")
