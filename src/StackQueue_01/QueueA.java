@@ -8,7 +8,6 @@ package StackQueue_01;
 public class QueueA {
 
     private Person[] person;
-
     private int pos;
 
     public QueueA() {
