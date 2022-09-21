@@ -5,15 +5,10 @@
 
 package StackQueue_01;
 
-import java.util.UUID;
+
 
 public class Person {
-@SuppressWarnings("unused")
-    public UUID getFahrzeugID() {
-        return fahrzeugID;
-    }
 
-    UUID fahrzeugID = UUID.randomUUID();
 
     private String name = "Paul";
     private int gebJahr = 1999;
