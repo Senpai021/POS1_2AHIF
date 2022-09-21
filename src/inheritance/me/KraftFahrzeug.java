@@ -20,6 +20,7 @@ public class KraftFahrzeug extends Fahrzeug{
         super(1000L, 4, 2000, 4);
         setHoechstGeschwindigkeit(hoechstGeschwindigkeit);
         setLeistung(leistung);
+        setKilometerstand(kilometerstand);
     }
 
 
