@@ -21,6 +21,7 @@ public class QueueA {
         Person person1 = new Person("Paul", 2000, false);
         Person person2 = new Person("Rastislav", 2006, true);
 
+
         queue.enqueue(person1);
         queue.enqueue(person2);
 
