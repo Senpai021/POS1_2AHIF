@@ -35,7 +35,7 @@ public class Fahrrad extends Fahrzeug {
     }
 
     private static int checkMaxSitzPlatz(int platz) throws ConException {
-        if (platz < 5 && platz > 1) {
+        if (platz <= 5 && platz >= 1) {
             return platz;
         } else {
             throw new ConException("maxSitzplatz must be below 5 and above 1");
