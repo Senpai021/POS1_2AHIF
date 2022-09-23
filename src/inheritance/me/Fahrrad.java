@@ -58,11 +58,6 @@ public class Fahrrad extends Fahrzeug {
         }
     }
 
-    public static void main(String[] args) throws ConException {
-        Fahrrad f = new Fahrrad(12L, 2, 200L, 2, 20);
-        f.printInfo();
-    }
-
     public long zollBerechnen(int rahmenh) {
         return (long) (rahmenh / 2.54);
     }
