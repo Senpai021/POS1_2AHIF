@@ -3,7 +3,7 @@
  * All rights reserved
  */
 
-package inheritance.me;
+package inheritance.A02_me;
 @SuppressWarnings("unused")
 public enum ArtDesFahrzeugs {
     Cabrio,

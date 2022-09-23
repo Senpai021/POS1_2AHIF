@@ -3,7 +3,7 @@
  * All rights reserved
  */
 
-package inheritance.me;
+package inheritance.A02_me;
 
 
 public class Test {
