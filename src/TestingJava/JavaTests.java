@@ -3,7 +3,7 @@
  * All rights reserved
  */
 
-public class JavaTests {
+package TestingJava;public class JavaTests {
     public static void main(String[] args) {
         int x = 10;
         int y = 5;
