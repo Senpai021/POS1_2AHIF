@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class KraftFahrzeug extends Fahrzeug{
+public class KraftFahrzeug extends Fahrzeug {
 
     private int hoechstGeschwindigkeit;
     private long leistung;

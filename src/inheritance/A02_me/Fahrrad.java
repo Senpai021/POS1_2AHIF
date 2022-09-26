@@ -18,14 +18,6 @@ public class Fahrrad extends Fahrzeug {
         setRahmenhoehe(checkRahmenhoehe(rahmenhoehe));
     }
 
-    private int checkRahmenhoehe(int rahmenh) throws ConException {
-        if (rahmenh <= 52 && rahmenh >= 48) {
-            return rahmenh;
-        } else {
-            throw new ConException("rahmenhoehe must be below 53 or above 47");
-        }
-    }
-
     private static long checkzuGesamtGewicht(long gGewicht) throws ConException {
         if (gGewicht > 0 && gGewicht <= 160) {
             return gGewicht;
@@ -55,6 +47,14 @@ public class Fahrrad extends Fahrzeug {
             return insassen;
         } else {
             throw new ConException("insassen must be below 2 and above 0");
+        }
+    }
+
+    private int checkRahmenhoehe(int rahmenh) throws ConException {
+        if (rahmenh <= 52 && rahmenh >= 48) {
+            return rahmenh;
+        } else {
+            throw new ConException("rahmenhoehe must be below 53 or above 47");
         }
     }
 

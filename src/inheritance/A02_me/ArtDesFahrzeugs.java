@@ -4,6 +4,7 @@
  */
 
 package inheritance.A02_me;
+
 @SuppressWarnings("unused")
 public enum ArtDesFahrzeugs {
     Cabrio,

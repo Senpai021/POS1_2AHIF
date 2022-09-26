@@ -33,8 +33,8 @@ public class QueueA {
     }
 
     public Person dequeue() {
-        for(int i = 0; i < person.length; i++){
-            if(person[i] != null){
+        for (int i = 0; i < person.length; i++) {
+            if (person[i] != null) {
                 var tempp = person[i];
                 person[i] = null;
                 reArrange();
@@ -44,9 +44,9 @@ public class QueueA {
         return null;
     }
 
-    private void reArrange(){
-        for(int i = 0; i < person.length; i++){
-            if (person[i] != null){
+    private void reArrange() {
+        for (int i = 0; i < person.length; i++) {
+            if (person[i] != null) {
                 var temp = person[i];
                 person[i - 1] = temp;
                 person[i] = null;
@@ -55,10 +55,10 @@ public class QueueA {
     }
 
     public void enqueue(Person perso) {
-        if(pos < person.length){
+        if (pos < person.length) {
             person[pos] = perso;
             pos++;
-        } else{
+        } else {
             System.out.println("Array ist voll!");
         }
     }

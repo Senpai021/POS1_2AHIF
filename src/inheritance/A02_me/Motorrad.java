@@ -9,7 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-public class Motorrad extends KraftFahrzeug{
+public class Motorrad extends KraftFahrzeug {
     @Getter
     @Setter
     private static boolean beiwagen;
@@ -20,7 +20,7 @@ public class Motorrad extends KraftFahrzeug{
     }
 
     private static int checkMaxSitzPlatz(int maxSitzplatz) throws ConException {
-        if (maxSitzplatz < 4 && maxSitzplatz >= 1){
+        if (maxSitzplatz < 4 && maxSitzplatz >= 1) {
             return maxSitzplatz;
         } else {
             throw new ConException("maxSitzplatz must be between 4 or 1");
@@ -28,13 +28,13 @@ public class Motorrad extends KraftFahrzeug{
     }
 
     private static int checkInsassen(int insassen) throws ConException {
-        if (beiwagen){
-            if(insassen < 4 && insassen > 0){
+        if (beiwagen) {
+            if (insassen < 4 && insassen > 0) {
                 return insassen;
             } else {
                 throw new ConException("insassen must be between 4 and 1 ");
             }
-        } else if(insassen < 3 && insassen > 0) {
+        } else if (insassen < 3 && insassen > 0) {
             return insassen;
         } else {
             throw new ConException("There can only be two on the bike!");

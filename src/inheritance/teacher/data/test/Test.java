@@ -26,12 +26,11 @@ public class Test {
 
         x.printInfo();
 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Eingabe Zahl: ");
-		System.out.println("Zahl: " + sc.nextFloat());
-		System.out.println("Eingabe Text");
-		System.out.println("Text: >" + sc.next() + "<");
-
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Eingabe Zahl: ");
+        System.out.println("Zahl: " + sc.nextFloat());
+        System.out.println("Eingabe Text");
+        System.out.println("Text: >" + sc.next() + "<");
 
 
     }

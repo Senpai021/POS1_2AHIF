@@ -7,8 +7,7 @@ package StackQueue_01;
 
 public class TestStack {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Person person1 = new Person("Paul", 2000, true);
         Person person2 = new Person("Rastislav", 2004, false);
         Person person3 = new Person("Elias", 2005, false);

@@ -19,8 +19,8 @@ public class LastKraftWagen extends KraftFahrzeug {
     }
 
     private long checkLadeMenge(long ladeMenge) throws ConException {
-        if(ladeMenge <= 40 && ladeMenge >= 0){
-            if(ladeMenge == 0) return ladeMenge;
+        if (ladeMenge <= 40 && ladeMenge >= 0) {
+            if (ladeMenge == 0) return ladeMenge;
             return ladeMenge;
         } else {
             throw new ConException("ladeMenge must be between 40 and 0 tons");

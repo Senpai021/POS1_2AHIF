@@ -7,24 +7,23 @@ package inheritance.A02_me;
 
 import lombok.Getter;
 import lombok.Setter;
-//import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 
-
+@Getter
 public abstract class Fahrzeug {
-    @Getter
+
     private UUID fahrzeugNummer;
-    @Getter
+
     @Setter
     private long leerGewicht;
-    @Getter
+
     @Setter
     private int maxSitzplatz;
-    @Getter
+
     @Setter
     private long zuGesamtGewicht;
-    @Getter
+
     @Setter
     private int insassen;
 

@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PersonenKraftWagen extends KraftFahrzeug{
+public class PersonenKraftWagen extends KraftFahrzeug {
     ArtDesFahrzeugs art;
 
     public PersonenKraftWagen(long leerGewicht, int maxSitzplatz, long zuGesamtGewicht, int insassen, int hoechstGeschwindigkeit, long leistung, long kilometerstand, ArtDesFahrzeugs art) throws ConException {
@@ -19,7 +19,7 @@ public class PersonenKraftWagen extends KraftFahrzeug{
     }
 
     private static int checkMaxSitzPlatz(int maxSitzplatz) throws ConException {
-        if (maxSitzplatz <= 4 && maxSitzplatz >= 1){
+        if (maxSitzplatz <= 4 && maxSitzplatz >= 1) {
             return maxSitzplatz;
         } else {
             throw new ConException("maxSitzPlatz must be bewtween 5 and 0");
