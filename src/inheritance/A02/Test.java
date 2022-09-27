@@ -3,8 +3,7 @@
  * All rights reserved
  */
 
-package inheritance.A02_me;
-
+package inheritance.A02;
 
 public class Test {
     public static void main(String[] args) throws ConException {
@@ -17,6 +16,5 @@ public class Test {
         System.out.println(pkw.printInfo() + " ignore fahrzeugNummer");
         System.out.println(m.printInfo() + " ignore fahrzeugNummer");
         System.out.println(lkw.printInfo() + " ignore fahrzeugNummer");
-
     }
 }

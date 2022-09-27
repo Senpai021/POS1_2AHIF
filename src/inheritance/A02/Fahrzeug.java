@@ -3,7 +3,7 @@
  * All rights reserved
  */
 
-package inheritance.A02_me;
+package inheritance.A02;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,18 +12,13 @@ import java.util.UUID;
 
 @Getter
 public abstract class Fahrzeug {
-
     private UUID fahrzeugNummer;
-
     @Setter
     private long leerGewicht;
-
     @Setter
     private int maxSitzplatz;
-
     @Setter
     private long zuGesamtGewicht;
-
     @Setter
     private int insassen;
 
@@ -58,9 +53,11 @@ public abstract class Fahrzeug {
         return toString();
     }
 
-    /*public static void main(String[] args) {
-        Fahrzeug f = new Fahrzeug(1000L, 4, 1500L, 4);
-        f.printInfo();
-    }*/
+    /*
+    public static void main(String[] args) {
+         Fahrzeug f = new Fahrzeug(1000L, 4, 1500L, 4);
+         f.printInfo();
+     }
+    */
 
 }
