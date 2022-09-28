@@ -40,8 +40,8 @@ public abstract class Fahrzeug {
 
     @Override
     public String toString() {
-        return "Fahrzeug: " +
-                "fahrzeugNummer=" + fahrzeugNummer +
+        return getClass().getSimpleName() +
+                " fahrzeugNummer=" + fahrzeugNummer +
                 ", leerGewicht=" + leerGewicht +
                 ", maxSitzplatz=" + maxSitzplatz +
                 ", zuGesamtGewicht=" + zuGesamtGewicht +
