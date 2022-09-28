@@ -3,10 +3,10 @@
  * All rights reserved
  */
 
-package inheritance.A02b;
+package inheritance.A02.b;
 
-import inheritance.A02a.Fahrzeug;
-import inheritance.A02a.KraftFahrzeug;
+import inheritance.A02.a.Fahrzeug;
+import inheritance.A02.a.KraftFahrzeug;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -50,39 +50,45 @@ public class Fuhrpark {
         for (Fahrzeug f : fahrzeuge) {
             if (nurKraftfahrzeuge) {
                 var kraftFahrzeug = f instanceof KraftFahrzeug ? ((KraftFahrzeug) f) : null;
-                try{
+                try {
                     kraftFahrzeug.printInfo();
-                } catch (NullPointerException npe){
+                } catch (NullPointerException npe) {
                     System.out.println("No vehicle of type kraftFahrzeug found!");
                 }
             } else {
-                f.printInfo();
+                try {
+                    f.printInfo();
+                } catch (NullPointerException npe) {
+                    npe.getCause();
+                }
             }
         }
-
     }
 
-    public Fahrzeug sucheFreiesFahrzeug(int hatPlatzFuer) {
-        for (Fahrzeug f : fahrzeuge) {
-            if ((f.getMaxSitzplatz() - f.getInsassen()) >= hatPlatzFuer) {
-                return f;
-            } else {
-                System.err.println("not enough Space");
+
+
+        public Fahrzeug sucheFreiesFahrzeug(int hatPlatzFuer){
+            for (Fahrzeug f : fahrzeuge) {
+                if ((f.getMaxSitzplatz() - f.getInsassen()) >= hatPlatzFuer) {
+                    return f;
+                } else {
+                    System.err.println("not enough Space");
+                }
             }
+            return null;
         }
-        return null;
+
+        public int getFahrzeugesize(){
+            return fahrzeuge.size();
+        }
+
+        public String clear () {
+            if (fahrzeuge.size() > 0) {
+                fahrzeuge.clear();
+                return "clear worked!";
+            }
+            return "already clear!";
+        }
     }
 
-    public int getFahrzeugesize() {
-        return fahrzeuge.size();
-    }
-
-    public String clear() {
-        if (fahrzeuge.size() > 0) {
-            fahrzeuge.clear();
-            return "clear worked!";
-        }
-        return "already clear!";
-    }
-}
 

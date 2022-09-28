@@ -3,7 +3,7 @@
  * All rights reserved
  */
 
-package inheritance.A02b;
+package inheritance.A02.b;
 
 public class containException extends Exception{
     public containException(String message){

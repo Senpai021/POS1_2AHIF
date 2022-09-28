@@ -3,7 +3,7 @@
  * All rights reserved
  */
 
-package inheritance.A02a;
+package inheritance.A02.a;
 
 import lombok.Getter;
 import lombok.Setter;

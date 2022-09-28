@@ -3,11 +3,11 @@
  * All rights reserved
  */
 
-package inheritance.A02a.Test;
+package inheritance.A02.a.Test;
 
-import inheritance.A02a.*;
-import inheritance.A02b.Fuhrpark;
-import inheritance.A02b.containException;
+import inheritance.A02.a.*;
+import inheritance.A02.b.Fuhrpark;
+import inheritance.A02.b.containException;
 
 public class Test {
     public static void main(String[] args) {
