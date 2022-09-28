@@ -64,7 +64,7 @@ public class Fahrrad extends Fahrzeug {
 
     @Override
     public String toString() {
-        return super.toString() + ", rahmenhoehe in cm=" + rahmenhoehe + ", rahmenhoehe in Zoll=" + zollBerechnen(rahmenhoehe);
+        return super.toString() + ", rahmenhoehe in cm=" + rahmenhoehe + ", rahmenhoehe in Zoll=" + zollBerechnen(rahmenhoehe) + "}";
     }
 
     public String printInfo() {

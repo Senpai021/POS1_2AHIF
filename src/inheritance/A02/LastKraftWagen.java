@@ -29,6 +29,6 @@ public class LastKraftWagen extends KraftFahrzeug {
 
 
     public String printInfo(){
-        return super.toString() + getLadeMenge();
+        return super.toString() + getLadeMenge() + "}";
     }
 }
