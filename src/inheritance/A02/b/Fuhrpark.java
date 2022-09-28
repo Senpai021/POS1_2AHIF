@@ -66,29 +66,28 @@ public class Fuhrpark {
     }
 
 
-
-        public Fahrzeug sucheFreiesFahrzeug(int hatPlatzFuer){
-            for (Fahrzeug f : fahrzeuge) {
-                if ((f.getMaxSitzplatz() - f.getInsassen()) >= hatPlatzFuer) {
-                    return f;
-                } else {
-                    System.err.println("not enough Space");
-                }
+    public Fahrzeug sucheFreiesFahrzeug(int hatPlatzFuer) {
+        for (Fahrzeug f : fahrzeuge) {
+            if ((f.getMaxSitzplatz() - f.getInsassen()) >= hatPlatzFuer) {
+                return f;
+            } else {
+                System.err.println("not enough Space");
             }
-            return null;
         }
-
-        public int getFahrzeugesize(){
-            return fahrzeuge.size();
-        }
-
-        public String clear () {
-            if (fahrzeuge.size() > 0) {
-                fahrzeuge.clear();
-                return "clear worked!";
-            }
-            return "already clear!";
-        }
+        return null;
     }
+
+    public int getFahrzeugesize() {
+        return fahrzeuge.size();
+    }
+
+    public String clear() {
+        if (fahrzeuge.size() > 0) {
+            fahrzeuge.clear();
+            return "clear call worked!";
+        }
+        return "already clear!";
+    }
+}
 
 
