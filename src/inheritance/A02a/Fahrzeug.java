@@ -3,11 +3,12 @@
  * All rights reserved
  */
 
-package inheritance.A02;
+package inheritance.A02a;
 
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Objects;
 import java.util.UUID;
 
 @Getter
@@ -40,24 +41,24 @@ public abstract class Fahrzeug {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() +
-                "={fahrzeugNummer=" + fahrzeugNummer +
-                ", leerGewicht=" + leerGewicht +
-                ", maxSitzplatz=" + maxSitzplatz +
-                ", zuGesamtGewicht=" + zuGesamtGewicht +
-                ", insassen=" + insassen +
-                ", aktuelleGewicht=" + berechneGewicht() + "}";
+        return getClass().getSimpleName() + "={fahrzeugNummer=" + fahrzeugNummer + ", leerGewicht=" + leerGewicht + ", maxSitzplatz=" + maxSitzplatz + ", zuGesamtGewicht=" + zuGesamtGewicht + ", insassen=" + insassen + ", aktuelleGewicht=" + berechneGewicht() + "}";
     }
 
     public String printInfo() {
         return toString();
     }
 
-    /*
-    public static void main(String[] args) {
-         Fahrzeug f = new Fahrzeug(1000L, 4, 1500L, 4);
-         f.printInfo();
-     }
-    */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fahrzeug fahrzeug = (Fahrzeug) o;
+        return getFahrzeugNummer().equals(fahrzeug.getFahrzeugNummer());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFahrzeugNummer());
+    }
 
 }

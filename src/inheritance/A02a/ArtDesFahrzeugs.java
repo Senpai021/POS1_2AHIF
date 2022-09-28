@@ -3,7 +3,7 @@
  * All rights reserved
  */
 
-package inheritance.A02;
+package inheritance.A02a;
 
 @SuppressWarnings("unused")
 public enum ArtDesFahrzeugs {

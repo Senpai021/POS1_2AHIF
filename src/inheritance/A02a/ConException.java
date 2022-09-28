@@ -3,7 +3,7 @@
  * All rights reserved
  */
 
-package inheritance.A02;
+package inheritance.A02a;
 
 public class ConException extends Exception {
     public ConException(String message) {
