@@ -5,8 +5,8 @@
 
 package inheritance.A02.b;
 
-public class containException extends Exception{
-    public containException(String message){
+public class containException extends Exception {
+    public containException(String message) {
         super(message);
     }
 }

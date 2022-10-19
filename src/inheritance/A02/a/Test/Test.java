@@ -50,7 +50,7 @@ public class Test {
 
                 try {
                     fp.ausgabeFahrzeuge(false);
-                } catch (AssertionError ae){
+                } catch (AssertionError ae) {
                     System.out.println(ae.getMessage());
                 }
 

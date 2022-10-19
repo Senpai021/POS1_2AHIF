@@ -51,6 +51,7 @@ public class Fuhrpark {
             if (nurKraftfahrzeuge) {
                 var kraftFahrzeug = f instanceof KraftFahrzeug ? ((KraftFahrzeug) f) : null;
                 try {
+                    assert kraftFahrzeug != null;
                     kraftFahrzeug.printInfo();
                 } catch (NullPointerException npe) {
                     System.out.println("No vehicle of type kraftFahrzeug found!");
@@ -65,7 +66,6 @@ public class Fuhrpark {
         }
     }
 
-
     public Fahrzeug sucheFreiesFahrzeug(int hatPlatzFuer) {
         for (Fahrzeug f : fahrzeuge) {
             if ((f.getMaxSitzplatz() - f.getInsassen()) >= hatPlatzFuer) {
@@ -77,6 +77,7 @@ public class Fuhrpark {
         return null;
     }
 
+    @SuppressWarnings("unused")
     public int getFahrzeugesize() {
         return fahrzeuge.size();
     }
