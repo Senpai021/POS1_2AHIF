@@ -5,9 +5,7 @@
 
 package Lab05;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,24 +41,28 @@ public class Frequency {
                 for (int i = 0; i < tline.length(); i++) {
                     if (tline.charAt(i) != ' ') {
                         tstring.append(tline.charAt(i));
-                    } else{
+                    } else {
                         list.add(tstring.toString());
                         tstring = new StringBuilder();
                     }
                 }
             }
 
-            // puuting the words into the map
+            // puting the words into the map
             for (String k : list) {
-                if (frequency.containsKey(k)){
+                if (frequency.containsKey(k)) {
                     frequency.replace(k, frequency.get(k), frequency.get(k) + 1);
                 } else {
                     frequency.put(k, 1);
                 }
             }
 
-            //printing the words(HashMapKey) with their counts(HashMapValues)
-            MapOutput();
+            /*
+            printing the words(HashMapKey) with their counts(HashMapValues)
+            writeToFile = true  if the method should write it's output to the console and vice versa
+            */
+
+            MapOutput(true);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -68,13 +70,24 @@ public class Frequency {
         }
     }
 
-    public void MapOutput() { //In der Angabe "ausgeben()"
-        for (Map.Entry<String, Integer> entry : frequency.entrySet()) {
-            if (entry != null) {
-                System.out.println(entry.getKey().equals("") ? "{EmptyString}: " + entry.getValue() : entry.getKey() + ": " + entry.getValue());
+    public void MapOutput(boolean writeToFile) throws IOException { //In der Angabe "ausgeben()"
+        try {
+            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("./DolezalOutput.txt"))); // This line creates a new File and I don't know how to prevent this
+            for (Map.Entry<String, Integer> entry : frequency.entrySet()) {
+                if (entry != null) {
+                    if (!writeToFile) {
+                        System.out.println(entry.getKey().equals("") ? "{EmptyString}: " + entry.getValue() : entry.getKey() + ": " + entry.getValue());
+                    } else {
+                        out.write(entry.getKey().equals("") ? "{EmptyString}: " + entry.getValue() + "\n" : entry.getKey() + ": " + entry.getValue() + "\n");
+                    }
+                }
             }
+            out.close();
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+            throw new IOException();
         }
+
+
     }
-
-
 }
