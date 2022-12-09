@@ -48,7 +48,7 @@ public class Frequency {
                 }
             }
 
-            // puting the words into the map
+            // putting the words into the map
             for (String k : list) {
                 if (frequency.containsKey(k)) {
                     frequency.replace(k, frequency.get(k), frequency.get(k) + 1);
@@ -62,7 +62,7 @@ public class Frequency {
             writeToFile = true  if the method should write it's output to the console and vice versa
             */
 
-            MapOutput(true);
+            MapOutput(false);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -75,10 +75,10 @@ public class Frequency {
             PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("./DolezalOutput.txt"))); // This line creates a new File and I don't know how to prevent this
             for (Map.Entry<String, Integer> entry : frequency.entrySet()) {
                 if (entry != null) {
-                    if (!writeToFile) {
-                        System.out.println(entry.getKey().equals("") ? "{EmptyString}: " + entry.getValue() : entry.getKey() + ": " + entry.getValue());
-                    } else {
+                    if (writeToFile) {
                         out.write(entry.getKey().equals("") ? "{EmptyString}: " + entry.getValue() + "\n" : entry.getKey() + ": " + entry.getValue() + "\n");
+                    } else {
+                        System.out.println(entry.getKey().equals("") ? "{EmptyString}: " + entry.getValue() : entry.getKey() + ": " + entry.getValue());
                     }
                 }
             }
