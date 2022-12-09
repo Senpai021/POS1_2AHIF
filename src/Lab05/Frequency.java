@@ -47,7 +47,6 @@ public class Frequency {
                     }
                 }
             }
-
             // putting the words into the map
             for (String k : list) {
                 if (frequency.containsKey(k)) {
@@ -56,12 +55,10 @@ public class Frequency {
                     frequency.put(k, 1);
                 }
             }
-
             /*
             printing the words(HashMapKey) with their counts(HashMapValues)
             writeToFile = true  if the method should write it's output to the console and vice versa
             */
-
             MapOutput(false);
 
         } catch (IOException e) {
@@ -87,7 +84,5 @@ public class Frequency {
             ioException.printStackTrace();
             throw new IOException();
         }
-
-
     }
 }
