@@ -12,7 +12,16 @@ public class Main {
         try {
             Frequency fr = new Frequency();
 
+            /*
+            counting the words(HashMapKey) with their frequency(HashMapValues)
+            */
             fr.MapInput();
+
+            /*
+            printing the words(HashMapKey) with their frequency(HashMapValues)
+            writeToFile = true  if the method should write it's output to the console and vice versa
+            */
+            fr.MapOutput(true);
 
             System.out.println(fr.tstring);
 

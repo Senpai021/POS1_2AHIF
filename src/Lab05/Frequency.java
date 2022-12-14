@@ -22,7 +22,7 @@ public class Frequency {
     }
 
     public void MapInput() throws IOException { //In der Angabe "analysieren()"
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Administrator\\IdeaProjects\\POS1_2AHIF\\src\\Lab05\\Dolezal.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Administrator\\POS1\\Labs\\src\\Lab05\\Dolezal.txt"))) {
             String line;
             StringBuilder tline = new StringBuilder();
             ArrayList<String> list = new ArrayList<>();
@@ -57,11 +57,7 @@ public class Frequency {
                 }
             }
 
-            /*
-            printing the words(HashMapKey) with their counts(HashMapValues)
-            writeToFile = true  if the method should write it's output to the console and vice versa
-            */
-            MapOutput(false);
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -71,13 +67,13 @@ public class Frequency {
 
     public void MapOutput(boolean writeToFile) throws IOException { //In der Angabe "ausgeben()"
         try {
-            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("./DolezalOutput.txt"))); // This line creates a new File and I don't know how to prevent this
+            var out = new BufferedWriter(new FileWriter("C:\\Users\\Administrator\\POS1\\Labs\\src\\Lab05\\DolezalOutput.txt")); // This line creates a new File and I don't know how to prevent this
             for (Map.Entry<String, Integer> entry : frequency.entrySet()) {
-                if (entry != null) {
+                if (entry != null && entry.toString().equals("")) {
                     if (writeToFile) {
-                        out.write(entry.getKey().equals("") ? "{EmptyString}: " + entry.getValue() + "\n" : entry.getKey() + ": " + entry.getValue() + "\n");
+                        out.write(entry.getKey() + ": " + entry.getValue() + "\n");
                     } else {
-                        System.out.println(entry.getKey().equals("") ? "{EmptyString}: " + entry.getValue() : entry.getKey() + ": " + entry.getValue());
+                        System.out.println(entry.getKey() + ": " + entry.getValue() + "\n");
                     }
                 }
             }

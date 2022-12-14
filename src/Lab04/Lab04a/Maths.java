@@ -6,6 +6,7 @@
 package Lab04.Lab04a;
 
 import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -101,7 +102,11 @@ public class Maths {
 
     //Not finished
     public ArrayList<File> dateiAusgabe(File file){
-        fileList.add(file);
+        for (File file1 : fileList) {
+            if (file != null) {
+                fileList.add(file);
+            }
+        }
 
         return fileList;
     }
