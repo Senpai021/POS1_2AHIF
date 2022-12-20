@@ -12,16 +12,16 @@ import java.util.function.Consumer;
 public class SetAndHashSet {
     public static void main(String[] args) {
         /*
-            Treeset uses Treemap for the implamentation
+            Tree-set uses Treemap for the implementation
             Set<String> names = new TreeSet<>();
          */
         //HashSet uses HashTable for the implementation
         Set<String> names = new TreeSet<>();
-        Map<LocalDate, Integer> reservierungen = new TreeMap<>();
+        Map<LocalDate, Integer> reservations = new TreeMap<>();
 
-        reservierungen.put(LocalDate.now(), 5);
-        reservierungen.put(LocalDate.of(2022, 12, 10), 4);
-        System.out.println(reservierungen);
+        reservations.put(LocalDate.now(), 5);
+        reservations.put(LocalDate.of(2022, 12, 10), 4);
+        System.out.println(reservations);
 
         names.add("Walter");
         names.add("Jesse");
