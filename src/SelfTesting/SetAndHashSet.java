@@ -30,12 +30,10 @@ public class SetAndHashSet {
         names.add("Saul");
         names.add("Walter");
 
-        /* String x;
+        String x;
         x = (names.contains("Walter")) ? "Walter" : "";
 
         System.out.println(x);
-
-        names.clear();*/
 
         System.out.println(names);
 
@@ -48,17 +46,20 @@ public class SetAndHashSet {
         names.forEach((Consumer<? super String>) System.out::println);
 
         Iterator<String> namesIterator = names.iterator();
-        while (true) {
-            if (!namesIterator.hasNext()) break;
+        while (namesIterator.hasNext()) {
             System.out.println(namesIterator.next());
         }
 
         List<Integer> numberList = new ArrayList<>();
-        numberList.add(1);
-        numberList.add(2);
-        numberList.add(3);
-        numberList.add(2);
-        numberList.add(1);
+        int k = 1;
+        for (int i = 0; i < 5; i++) {
+            numberList.add(k);
+            if (i < 2) {
+                k++;
+            } else {
+                k--;
+            }
+        }
         System.out.println(numberList);
 
         Set<Integer> numberSet = new TreeSet<>(numberList);
