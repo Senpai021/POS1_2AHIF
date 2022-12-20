@@ -21,7 +21,7 @@ public class Main {
             printing the words(HashMapKey) with their frequency(HashMapValues)
             writeToFile = true  if the method should write it's output to the console and vice versa
             */
-            fr.MapOutput(true);
+            fr.MapOutput(false);
 
             System.out.println(fr.tstring);
 

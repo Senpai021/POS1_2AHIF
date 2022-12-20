@@ -22,7 +22,7 @@ public class Frequency {
     }
 
     public void MapInput() throws IOException { //In der Angabe "analysieren()"
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Administrator\\POS1\\Labs\\src\\Lab05\\Dolezal.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Administrator\\POS1\\Labs\\src\\Lab05\\Shakespeare.txt"))) {
             String line;
             StringBuilder tline = new StringBuilder();
             ArrayList<String> list = new ArrayList<>();
@@ -30,6 +30,10 @@ public class Frequency {
             // lowercase + without . and , word per word
             while ((line = br.readLine()) != null) {
                 line = line.toLowerCase();
+
+                // reset tline and tstring here
+
+
                 for (int i = 0; i < line.length(); i++) {
                     if (line.charAt(i) == '.' || line.charAt(i) == ',') {
                         tline.append(' ');
@@ -37,7 +41,7 @@ public class Frequency {
                         tline.append(line.charAt(i));
                     }
                 }
-                StringBuilder tstring = new StringBuilder();
+
                 for (int i = 0; i < tline.length(); i++) {
                     if (tline.charAt(i) != ' ') {
                         tstring.append(tline.charAt(i));
@@ -47,6 +51,7 @@ public class Frequency {
                     }
                 }
             }
+
 
             // putting the words into the map
             for (String k : list) {
@@ -69,7 +74,7 @@ public class Frequency {
         try {
             var out = new BufferedWriter(new FileWriter("C:\\Users\\Administrator\\POS1\\Labs\\src\\Lab05\\DolezalOutput.txt")); // This line creates a new File and I don't know how to prevent this
             for (Map.Entry<String, Integer> entry : frequency.entrySet()) {
-                if (entry != null && entry.toString().equals("")) {
+                if (entry != null && !entry.toString().equals("")) {
                     if (writeToFile) {
                         out.write(entry.getKey() + ": " + entry.getValue() + "\n");
                     } else {

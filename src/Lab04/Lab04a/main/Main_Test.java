@@ -22,7 +22,7 @@ public class Main_Test {
 
         System.out.println(m.fibonacci(10) + "\n");
 
-     //   m.printMap();
-        System.out.println(m.listDirectory(file));
+        //   m.printMap();
+        System.out.println(m.listDirectory(file.toString()));
     }
 }

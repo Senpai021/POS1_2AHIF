@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
 
 public class Maths {
 
@@ -18,6 +17,17 @@ public class Maths {
     private final File file;
 
     private final ArrayList<File> fileList = new ArrayList<>();
+    private final int count = 0;
+    private int counter = 0;
+
+    /* Code vom Lehrer
+        public int fibonacci(int zahl) {
+            if (zahl <= 2) {
+                return 1;
+        } else {
+            return fibonacci(zahl - 1) + fibonacci(zahl - 2);
+        }
+    }*/
 
     // In the constructor, the first two fibonacci numbers are predefined
     public Maths(File file) {
@@ -42,15 +52,6 @@ public class Maths {
         }
     }
 
-    /* Code vom Lehrer
-        public int fibonacci(int zahl) {
-            if (zahl <= 2) {
-                return 1;
-        } else {
-            return fibonacci(zahl - 1) + fibonacci(zahl - 2);
-        }
-    }*/
-
     public int fibonacci(int zahl) {
         if (fibomap.get(zahl) != null) {
             return fibomap.get(zahl);
@@ -64,34 +65,28 @@ public class Maths {
     //This method is used for the already done calculations
     @SuppressWarnings("unused")
     public void printMap() {
-        for (Integer i :
-                fibomap.values()) {
+        for (Integer i : fibomap.values()) {
             System.out.println(i);
         }
     }
 
-    private int counter = 0;
-    private int count = 0;
-    private int size = 0;
-    public int listDirectory(@NotNull File path){
-        counter ++;
-        File[] list = path.listFiles();
-        for (File file : Objects.requireNonNull(list)) {
-            if(!file.isDirectory()){
-                size += (file.getTotalSpace() / 1024d);
-                dateiAusgabe(file);
-            } else {
-                System.out.println(file.getAbsolutePath());
-                listDirectory(file);
-                count ++;
+    public int listDirectory(@NotNull String path) {
+        int count = 0;
+        File dir = new File(path);
+        File[] filesList = dir.listFiles();
+        if(filesList != null){
+            for (File file : filesList) {
+                if (file.isDirectory()) {
+                    count++;
+                }
             }
+            if (counter == 1) {
+                int size = 0;
+                System.out.println("\n" + "Total size:\n " + size);
+                System.out.println("Total count:");
+            }
+            counter--;
         }
-
-        if (counter == 1) {
-            System.out.println("\n" + "Total size:\n " + size);
-            System.out.println("Total count:");
-        }
-        counter --;
         return count;
     }
 
@@ -101,13 +96,12 @@ public class Maths {
     }
 
     //Not finished
-    public ArrayList<File> dateiAusgabe(File file){
+    public ArrayList<File> dateiAusgabe(File file) {
         for (File file1 : fileList) {
             if (file != null) {
                 fileList.add(file);
             }
         }
-
         return fileList;
     }
 }
