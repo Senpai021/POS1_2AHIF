@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Stefan Psutka
+ * Copyright (c) 2022-2023 Stefan Psutka
  * All rights reserved
  */
 
@@ -25,7 +25,7 @@ public class Main {
 
             System.out.println(fr.tstring);
 
-        } catch (IOException io){
+        } catch (IOException io) {
             io.printStackTrace();
             throw new IOException();
         }

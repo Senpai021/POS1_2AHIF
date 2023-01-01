@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Stefan Psutka
+ * Copyright (c) 2022-2023 Stefan Psutka
  * All rights reserved
  */
 
@@ -107,9 +107,9 @@ class Moebelhaus {
 
     public void angebotLadenDeserialisierung(String fileName) throws IOException {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
-            try{
+            try {
                 angebot = (ArrayList<Moebel>) ois.readObject();
-            } catch (ClassNotFoundException e){
+            } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
         }
@@ -117,11 +117,11 @@ class Moebelhaus {
 
     public void generiereMoebelRekursiv(int anzahl) {
         try {
-            hinzu(new Moebel("Sofa"+anzahl, true));
+            hinzu(new Moebel("Sofa" + anzahl, true));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        if (anzahl > 1){
+        if (anzahl > 1) {
             generiereMoebelRekursiv(anzahl - 1);
         }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Stefan Psutka
+ * Copyright (c) 2022-2023 Stefan Psutka
  * All rights reserved
  */
 
@@ -61,7 +61,6 @@ public class Frequency {
                     frequency.put(k, 1);
                 }
             }
-
 
 
         } catch (IOException e) {

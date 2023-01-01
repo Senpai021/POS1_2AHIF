@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Stefan Psutka
+ * Copyright (c) 2022-2023 Stefan Psutka
  * All rights reserved
  */
 
@@ -29,11 +29,11 @@ class MoebelTest {
     @Test
     void setgetArt() {
         try {
-            ref.setArt("Tisch");
+            ref.setArt("Table");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        assertEquals("Tisch", ref.getArt());
+        assertEquals("Table", ref.getArt());
     }
 
     @Test
@@ -60,8 +60,9 @@ class MoebelTest {
     @Test
     void print() {
     }
+
     @Test
-    void testException(){
+    void testException() {
         assertThrows(Exception.class, () -> new Moebel(null, true));
     }
 }

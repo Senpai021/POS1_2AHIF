@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Stefan Psutka
+ * Copyright (c) 2022-2023 Stefan Psutka
  * All rights reserved
  */
 
@@ -34,7 +34,6 @@ public class StrTokenizer {
 
         StringTokenizer st;
         st = new StringTokenizer(string, crunchBy);
-
         while (st.hasMoreTokens()) al.add((String) st.nextElement());
 
         return al;

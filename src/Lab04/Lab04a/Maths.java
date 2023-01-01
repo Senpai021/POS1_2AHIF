@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Stefan Psutka
+ * Copyright (c) 2022-2023 Stefan Psutka
  * All rights reserved
  */
 
@@ -74,7 +74,7 @@ public class Maths {
         int count = 0;
         File dir = new File(path);
         File[] filesList = dir.listFiles();
-        if(filesList != null){
+        if (filesList != null) {
             for (File file : filesList) {
                 if (file.isDirectory()) {
                     count++;
