@@ -5,8 +5,10 @@
 
 package Lab07;
 
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -16,6 +18,8 @@ import java.util.Objects;
 import java.util.TreeMap;
 
 import static java.lang.Integer.valueOf;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SuppressWarnings(value = "unused")
 public class Table {
@@ -29,7 +33,8 @@ public class Table {
         reservations = new TreeMap<>();
     }
 
-    public static Table createTisch(String line) throws TableException {
+    @Contract("null -> fail")
+    public static @NotNull Table createTisch(String line) throws TableException {
         if (line == null || line.isEmpty()) {
             throw new TableException("empty text not valid");
         } else {
@@ -110,17 +115,25 @@ public class Table {
         return "Table{" + "designation='" + designation + '\'' + ", seats=" + seats + ", reservations=" + reservations + '}';
     }
 
-    public void printInfo() {
-        System.out.println(this);
+    public String printInfo() {
+        return Table.this.toString();
     }
 
 
+
+    @Contract(value = "null -> false", pure = true)
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Table table = (Table) o;
-        return getSeats() == table.getSeats() && Objects.equals(getDesignation(), table.getDesignation()) && Objects.equals(reservations, table.reservations);
+        boolean result;
+        if (this == o) {
+            result = true;
+        } else if (o == null || getClass() != o.getClass()) {
+            result = false;
+        } else {
+            Table table = (Table) o;
+            result = getSeats() == table.getSeats() && Objects.equals(getDesignation(), table.getDesignation()) && Objects.equals(reservations, table.reservations);
+        }
+        return result;
     }
 
     @Override
@@ -146,6 +159,7 @@ class Restaurant {
         }
     }
 
+    @Contract(pure = true)
     public Restaurant() {
         tables = new ArrayList<>();
     }
@@ -244,11 +258,91 @@ class TestTable {
 
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws TableException {
         try {
             t1 = new Table("Table1", 4);
+            t2 = new Table("Table2", 6);
+            t3 = new Table("Table3", 3);
         } catch (TableException e) {
-            System.out.println(e.getMessage());
+            throw new TableException(e.getMessage());
+        }
+    }
+
+    @Test
+    void TestT1GetDesignation(){
+        assertEquals("Table1", t1.getDesignation());
+    }
+
+    @Test
+    void TestT2GetDesignation(){
+        assertEquals("Table2", t2.getDesignation());
+    }
+
+    @Test
+    void TestT3GetDesignation(){
+        assertEquals("Table3", t3.getDesignation());
+    }
+
+    @Test
+    void TestT1GetSeats(){
+        assertEquals(4, t1.getSeats());
+    }
+
+    @Test
+    void TestT2GetSeats(){
+        assertEquals(6, t2.getSeats());
+    }
+
+    @Test
+    void TestT3GetSeats(){
+        assertEquals(3, t3.getSeats());
+    }
+
+    @Test
+    void TestReserve(){
+        var t = t1.reserve(LocalDate.of(2023, 1, 3), 2);
+        assertEquals("Table1", t);
+    }
+
+    @Test
+    void TestIsReservedAt(){
+        TestReserve(); // so that I don't have to rewrite my code in TestReserve() function
+        assertTrue(t1.isReservedAt(LocalDate.of(2023, 1, 3)));
+    }
+
+    @Test
+    void TestNoReservations(){
+        assertTrue(t1.noReservations());
+    }
+    @Test
+    void TestCancelReservation(){
+        TestReserve(); // so that I don't have to rewrite my code in TestReserve() function
+        assertEquals(2, t1.cancelReservation(LocalDate.of(2023, 1, 3)));
+    }
+
+    @Test
+    void TestPrintInfo(){
+        assertEquals("Table{designation='Table1', seats=4, reservations={}}", t1.printInfo());
+
+    }
+
+    @Test
+    void TestSetDesignation() throws TableException {
+        try {
+            t1.setDesignation("Table11");
+            assertEquals("Table11", t1.getDesignation());
+        } catch (TableException e) {
+            throw new TableException(e.getMessage());
+        }
+    }
+
+    @Test
+    void TestSetSeats() throws TableException {
+        try {
+            t1.setSeats(5);
+            assertEquals(5, t1.getSeats());
+        } catch (TableException e) {
+            throw new TableException(e.getMessage());
         }
     }
 
