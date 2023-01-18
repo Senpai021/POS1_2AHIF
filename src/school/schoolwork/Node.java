@@ -9,7 +9,6 @@ import org.jetbrains.annotations.Contract;
 import school.homework.lab01.Person;
 
 public class Node {
-
     private Person person;
     private Node next;
 
@@ -17,7 +16,6 @@ public class Node {
     public Node(Person _person, Node _next) {
         setValue(_person);
         setNext(_next);
-
     }
 
     public Person getPerson() {
@@ -34,6 +32,11 @@ public class Node {
 
     public void setNext(Node _next) {
         this.next = _next;
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" + "person=" + person + ", next=" + next + '}';
     }
 }
 
@@ -68,5 +71,25 @@ class LinkedList {
             }
         }
         return success;
+    }
+
+    @Override
+    public String toString() {
+        return "LinkedList{" + "root=" + root + '}';
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        var n0 = new Node(new Person("John", 2010, false), null);
+        var n1 = new Node(new Person("George", 2004, true), null);
+
+        var ll = new LinkedList();
+
+        System.out.println(ll.addFirst(n0.getPerson()));
+
+        System.out.println(ll.addLast(n1.getPerson()));
+
+        System.out.println(ll);
     }
 }
