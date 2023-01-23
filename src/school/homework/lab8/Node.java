@@ -8,9 +8,6 @@ package school.homework.lab8;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Set;
-import java.util.TreeSet;
-
 public class Node implements Comparable {
     private Cat cat;
     private Node next;
@@ -84,37 +81,12 @@ class LinkedList {
     }
 
     /**
-     * This function compares the Node (Cat -> Age) you want to implement into the list with the other Nodes [Not working D;]
+     * This function compares the Node (Cat -> name) you want to implement into the list with the other Nodes [Not working D;]
      * @param n -> Node you want to implement into the LinkedList
      * @return -> true when the implementation was successfully done / false when the implementation wasn't successfully done
      */
-    public boolean sortetImplemend(Node n) {
-        boolean successfully = false;
-        if (n == null) {
-            return false;
-        }
-        Node node = root;
-        Node _node;
-        Set<Node> sortetNodeSet = new TreeSet<>();
-        while (node != null) {
-            _node = node;
-            sortetNodeSet.add(_node);
-
-            if(node.getNext() == null)
-                break;
-            node = node.getNext();
-        }
-        sortetNodeSet.add(n);
-        for (Node _n : sortetNodeSet) {
-            if (_n != null){
-                assert node != null;
-                node.setNext(_n);
-                //node = node.getNext();
-            } else {
-                successfully = true;
-            }
-        }
-        return successfully;
+    public boolean sortedImplemend(Node n) {
+        return false;
     }
 
     public void printWithIterator() {
@@ -158,11 +130,11 @@ class Main {
 
         System.out.println("\n");
 
-        System.out.println(linkedList.sortetImplemend(n0));
+        System.out.println(linkedList.sortedImplemend(n0));
 
         System.out.println("\n");
 
-        System.out.println(linkedList.sortetImplemend(n1));
+        System.out.println(linkedList.sortedImplemend(n1));
 
         System.out.println("\n");
 
