@@ -22,7 +22,7 @@ public class Frequency {
     }
 
     public void MapInput() throws IOException { //In der Angabe "analysieren()"
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Administrator\\POS1\\Labs\\src\\school.homework.lab05\\Shakespeare.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Administrator\\POS1\\Labs\\src\\school\\homework\\lab05\\Shakespeare.txt"))) {
             String line;
             StringBuilder tline = new StringBuilder();
             ArrayList<String> list = new ArrayList<>();
@@ -73,7 +73,7 @@ public class Frequency {
         try {
             var out = new BufferedWriter(new FileWriter("C:\\Users\\Administrator\\POS1\\Labs\\src\\school.homework.lab05\\DolezalOutput.txt")); // This line creates a new File and I don't know how to prevent this
             for (Map.Entry<String, Integer> entry : frequency.entrySet()) {
-                if (entry != null && !entry.toString().equals("")) {
+                if (entry != null && !entry.toString().isEmpty()) {
                     if (writeToFile) {
                         out.write(entry.getKey() + ": " + entry.getValue() + "\n");
                     } else {
