@@ -20,7 +20,7 @@ public class test {
         t.put(new Player("Frederik", 6, 14));
         t.put(new Player("Fritz", 19, 3));
         t.put(new Player("Chris", 25, 1));
-        t.put(new Player("Nico", 22, 2));
+        t.put(new Player("Nico", 14, 2));
         t.put(new Player("Pascal", 18, 7));
 
 

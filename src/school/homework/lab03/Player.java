@@ -7,10 +7,12 @@ package school.homework.lab03;
 
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 public class Player {
 
+    @Setter
     private String name;
     private int score;
     private int number;
@@ -24,10 +26,6 @@ public class Player {
         setScore(score);
     }
 
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void setScore(int score) {
         if (score < 0) throw new RuntimeException("Violation detected: The score is expected to be at least 0.");

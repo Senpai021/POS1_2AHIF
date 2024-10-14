@@ -5,6 +5,13 @@
 
 package school.homework.lab01;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import java.time.LocalDate;
+
+@Setter
+@Getter
 public class Person {
 
     private String name = "Paul";
@@ -17,57 +24,37 @@ public class Person {
         setBrille(brille);
     }
 
-
-    @SuppressWarnings({"unused"})
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @SuppressWarnings({"unused"})
-    public int getGebJahr() {
-        return gebJahr;
-    }
-
-    public void setGebJahr(int gebJahr) {
-        this.gebJahr = gebJahr;
-    }
-
-    @SuppressWarnings({"unused"})
-    public boolean getBrille() {
-        return brille;
-    }
-
-    public void setBrille(boolean brille) {
-        this.brille = brille;
-    }
-
     public int berechneAlter() {
-        return 2021 - gebJahr;
+        return LocalDate.now().getYear() - gebJahr;
     }
-
-    @SuppressWarnings({"unused"})
-    public int berechneAlter2(int aktuellesJahr) {
+    
+    public int berechneAlterMitJahr(int aktuellesJahr) {
         return aktuellesJahr - gebJahr;
     }
 
     public void printInfo() {
         System.out.println("Name: " + name);
-        System.out.println("GeburtsJahr: " + gebJahr);
+        System.out.println("Geburtsjahr: " + gebJahr);
         System.out.println("Alter: " + berechneAlter());
         System.out.println("Brillenträger: " + brille);
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", gebJahr=" + gebJahr +
-                ", brille=" + brille +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Person{")
+                .append("name='").append(name).append('\'')
+                .append(", gebJahr=").append(gebJahr)
+                .append(", brille=").append(brille)
+                .append('}');
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        Person p = new Person("Paul", 1999, true);
+        p.printInfo();
+        System.out.println(p.berechneAlter());
+        System.out.println(p.berechneAlterMitJahr(2024));
     }
 }
 

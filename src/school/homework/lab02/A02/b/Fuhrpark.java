@@ -85,7 +85,7 @@ public class Fuhrpark {
     }
 
     public String clear() {
-        if (fahrzeuge.size() > 0) {
+        if (!fahrzeuge.isEmpty()) {
             fahrzeuge.clear();
             return "clear call worked!";
         }

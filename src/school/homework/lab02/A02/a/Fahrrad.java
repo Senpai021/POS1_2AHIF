@@ -8,9 +8,9 @@ package school.homework.lab02.A02.a;
 import lombok.Getter;
 import lombok.Setter;
 
+@Setter
+@Getter
 public class Fahrrad extends Fahrzeug {
-    @Setter
-    @Getter
     private int rahmenhoehe; // zoll
 
     public Fahrrad(long leerGewicht, int maxSitzplatz, long zuGesamtGewicht, int insassen, int rahmenhoehe) throws ConException {

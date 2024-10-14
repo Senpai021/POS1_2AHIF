@@ -6,17 +6,15 @@
 package selfTesting;
 
 import lombok.Getter;
-import lombok.Setter;
 import org.jetbrains.annotations.Contract;
 
 import java.lang.reflect.Field;
 
 public class Reflection {
     @Getter
-    @Setter
     private final int number;
     @Getter
-    @Setter
+
     private final String name;
     @Contract(pure = true)
     public Reflection(int number1, String name1){
